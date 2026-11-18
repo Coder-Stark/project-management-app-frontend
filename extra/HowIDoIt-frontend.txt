@@ -1,0 +1,40 @@
+as frontend folder already created (empty)
+
+//PROJECT INTIALISATION WITH CLEANUP
+now i have to install react project using vite
+1. so i am using command
+-> npm create vite@latest . -- --template react
+
+2. deleted 2 files App.css and assets folder (not need) because I will use tailwind css
+
+
+//PREREQUIREMENTS (install some packages and some empty folders/files)
+1.  npm install tailwindcss @tailwindcss/vite    (using tailwindCSS) //i am following tailwindcss documentation for that
+    configure vite plugin (update vite.config.js)
+    update index.css -> @import "tailwindcss";
+
+    
+so our directory tree will look like that (with feature based architecture)
+
+frontend
+┣ node_modules
+┣ extra
+┃ ┣ directoryTree.js
+┃ ┣ HowIDoIt-frontend.txt
+┣ public
+┣ src
+┃ ┣ app
+┃ ┃ ┗ App.jsx
+┃ ┣ features
+┃ ┃ ┗ .gitkeep
+┃ ┣ shared
+┃ ┃ ┗ styles
+┃ ┃ ┃ ┗ index.css
+┃ ┗ main.jsx
+┣ .gitignore
+┣ eslint.config.js
+┣ index.html
+┣ package-lock.json
+┣ pacakge.json
+┣ README.md 
+┣ vite.config.js
