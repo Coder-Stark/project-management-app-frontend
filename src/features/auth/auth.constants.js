@@ -1,0 +1,6 @@
+export const AUTH_RULES = {
+  NAME_MIN: 2,
+  NAME_MAX: 50,
+  PASSWORD_MIN: 8,
+  PASSWORD_MAX: 72,
+};
