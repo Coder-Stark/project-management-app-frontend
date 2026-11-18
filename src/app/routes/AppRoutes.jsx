@@ -5,6 +5,7 @@ import AppLayout from "../layouts/AppLayout.jsx";
 import LoginPage from "../../features/auth/pages/LoginPage.jsx";
 import SignupPage from "../../features/auth/pages/SignupPage.jsx";
 import ProjectsPage from "../../features/projects/pages/ProjectsPage.jsx";
+import ProjectDetailPage from "../../features/projects/pages/ProjectDetailPage.jsx";
 
 export default function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ export default function AppRoutes() {
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
         </Route>
       </Route>
 

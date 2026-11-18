@@ -18,5 +18,6 @@ export function getApiError(error) {
   return {
     message: data?.message || "Something went wrong. Please try again.",
     fieldErrors,
+    status: error.response.status,
   };
 }

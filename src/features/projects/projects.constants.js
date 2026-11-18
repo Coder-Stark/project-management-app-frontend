@@ -1,0 +1,4 @@
+export const PROJECT_RULES = {
+  TITLE_MAX: 100,
+  DESCRIPTION_MAX: 500,
+};

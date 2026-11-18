@@ -41,7 +41,7 @@ frontend
 
 =========================================================================
 
-Phase 2: Redux setup and Signup/login
+Phase 2b and 2c: Redux setup and Signup/login
 
 -> npm install @reduxjs/toolkit react-redux react-router-dom axios
 
@@ -91,6 +91,78 @@ src
  ┃ ┣ styles
  ┃ ┃ ┗ index.css
  ┃ ┗ utils
+ ┃ ┃ ┣ getApiError.js
+ ┃ ┃ ┗ tokenStorage.js
+ ┗ main.jsx
+
+=============================================================================================================
+
+Phase 3b : Projects CRUD frontend implemented
+
+now updated directory tree is below
+
+src
+ ┣ app
+ ┃ ┣ layouts
+ ┃ ┃ ┗ AppLayout.jsx
+ ┃ ┣ routes
+ ┃ ┃ ┣ AppRoutes.jsx
+ ┃ ┃ ┣ GuestRoute.jsx
+ ┃ ┃ ┗ ProtectedRoute.jsx
+ ┃ ┣ providers.jsx
+ ┃ ┗ store.js
+ ┣ features
+ ┃ ┣ auth
+ ┃ ┃ ┣ api
+ ┃ ┃ ┃ ┗ auth.api.js
+ ┃ ┃ ┣ components
+ ┃ ┃ ┃ ┣ AuthCard.jsx
+ ┃ ┃ ┃ ┣ LoginForm.jsx
+ ┃ ┃ ┃ ┗ SignupForm.jsx
+ ┃ ┃ ┣ hooks
+ ┃ ┃ ┃ ┗ useAuth.js
+ ┃ ┃ ┣ pages
+ ┃ ┃ ┃ ┣ LoginPage.jsx
+ ┃ ┃ ┃ ┗ SignupPage.jsx
+ ┃ ┃ ┣ utils
+ ┃ ┃ ┃ ┗ auth.validation.js
+ ┃ ┃ ┣ auth.constants.js
+ ┃ ┃ ┗ auth.slice.js
+ ┃ ┣ projects
+ ┃ ┃ ┣ api
+ ┃ ┃ ┃ ┗ projects.api.js
+ ┃ ┃ ┣ components
+ ┃ ┃ ┃ ┣ DeleteProjectDialog.jsx
+ ┃ ┃ ┃ ┣ ProjectCard.jsx
+ ┃ ┃ ┃ ┣ ProjectFormModal.jsx
+ ┃ ┃ ┃ ┗ ProjectList.jsx
+ ┃ ┃ ┣ hooks
+ ┃ ┃ ┃ ┣ useProject.js
+ ┃ ┃ ┃ ┗ useProjectsList.js
+ ┃ ┃ ┣ pages
+ ┃ ┃ ┃ ┣ ProjectDetailPage.jsx
+ ┃ ┃ ┃ ┗ ProjectsPage.jsx
+ ┃ ┃ ┣ utils
+ ┃ ┃ ┃ ┗ projects.validation.js
+ ┃ ┃ ┣ projects.constants.js
+ ┃ ┃ ┗ projects.slice.js
+ ┃ ┗ .gitkeep
+ ┣ shared
+ ┃ ┣ api
+ ┃ ┃ ┗ axiosClient.js
+ ┃ ┣ components
+ ┃ ┃ ┣ Button.jsx
+ ┃ ┃ ┣ EmptyState.jsx
+ ┃ ┃ ┣ ErrorBanner.jsx
+ ┃ ┃ ┣ FormField.jsx
+ ┃ ┃ ┣ FullPageLoader.jsx
+ ┃ ┃ ┣ InlineLoader.jsx
+ ┃ ┃ ┣ Modal.jsx
+ ┃ ┃ ┗ TextAreaField.jsx
+ ┃ ┣ styles
+ ┃ ┃ ┗ index.css
+ ┃ ┗ utils
+ ┃ ┃ ┣ formatDate.js
  ┃ ┃ ┣ getApiError.js
  ┃ ┃ ┗ tokenStorage.js
  ┗ main.jsx

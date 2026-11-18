@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer, { logout } from "../features/auth/auth.slice.js";
+import projectsReducer from "../features/projects/projects.slice.js";
 import { registerUnauthorizedHandler } from "../shared/api/axiosClient.js";
 import { saveToken, clearToken } from "../shared/utils/tokenStorage.js";
 
@@ -7,6 +8,7 @@ import { saveToken, clearToken } from "../shared/utils/tokenStorage.js";
 export const store = configureStore({
   reducer: {
     auth: authReducer,
+    projects: projectsReducer,
   },
 });
 
