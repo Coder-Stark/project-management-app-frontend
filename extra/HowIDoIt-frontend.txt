@@ -207,3 +207,17 @@ src
   ┗ tasks
     ┗ components
       ┗ TaskFilterBar.jsx
+
+=============================================================================================================
+
+Phase 6 : Docs	Wrote this README and .env.example.
+
+new files and folder added (for that feature)
+
+src
+┗ features
+  ┗ tasks
+    ┗ components
+      ┗ TaskFilterBar.jsx
+
+=============================== Project Done ======================================================
