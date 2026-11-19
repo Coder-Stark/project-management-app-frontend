@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import InlineLoader from "../../../shared/components/InlineLoader.jsx";
 import { formatDate } from "../../../shared/utils/formatDate.js";
+import ProjectTasks from "../../tasks/components/ProjectTasks.jsx";
 import { useProject } from "../hooks/useProject.js";
 
 export default function ProjectDetailPage() {
@@ -37,9 +38,7 @@ export default function ProjectDetailPage() {
         <p className="mt-3 text-xs text-gray-500">Created {formatDate(project.createdAt)}</p>
       </div>
 
-      <div className="mt-6 rounded-lg border border-dashed border-gray-300 bg-white p-10 text-center text-sm text-gray-500">
-        Tasks will appear here.
-      </div>
+      <ProjectTasks projectId={project.id} />
     </div>
   );
 }

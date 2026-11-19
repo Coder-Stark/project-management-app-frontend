@@ -166,3 +166,32 @@ src
  ┃ ┃ ┣ getApiError.js
  ┃ ┃ ┗ tokenStorage.js
  ┗ main.jsx
+
+=============================================================================================================
+
+Phase 4b : Tasks CRUD frontend implemented
+
+new files and folder added (for that feature)
+
+src
+┣ features
+┃ ┗ tasks
+┃   ┣ api
+┃   ┃ ┗ tasks.api.js
+┃   ┣ components
+┃   ┃ ┣ DeleteTaskDialog.jsx
+┃   ┃ ┣ ProjectTasks.jsx
+┃   ┃ ┣ TaskCard.jsx
+┃   ┃ ┣ TaskFormModal.jsx
+┃   ┃ ┣ TaskList.jsx
+┃   ┃ ┗ TaskStatusBadge.jsx
+┃   ┣ hooks
+┃   ┃ ┗ useTasks.js
+┃   ┣ utils
+┃   ┃ ┣ tasks.utils.js
+┃   ┃ ┗ tasks.validation.js
+┃   ┣ tasks.constants.js
+┃   ┗ tasks.slice.js
+┗ shared
+  ┗ components
+    ┗ SelectField.jsx

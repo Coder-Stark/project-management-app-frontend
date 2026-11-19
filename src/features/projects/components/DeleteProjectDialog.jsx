@@ -33,8 +33,8 @@ export default function DeleteProjectDialog({ project, onClose }) {
 
         <p className="text-sm text-gray-600">
           You are about to delete{" "}
-          <span className="break-words font-medium text-gray-900">{project.title}</span>. This
-          cannot be undone.
+          <span className="break-words font-medium text-gray-900">{project.title}</span> and all
+          its tasks. This cannot be undone.
         </p>
 
         <div className="flex justify-end gap-2">
