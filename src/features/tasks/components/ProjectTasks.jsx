@@ -3,13 +3,16 @@ import Button from "../../../shared/components/Button.jsx";
 import EmptyState from "../../../shared/components/EmptyState.jsx";
 import ErrorBanner from "../../../shared/components/ErrorBanner.jsx";
 import InlineLoader from "../../../shared/components/InlineLoader.jsx";
+import { DEFAULT_FILTERS } from "../tasks.constants.js";
 import { useTasks } from "../hooks/useTasks.js";
+import TaskFilterBar from "./TaskFilterBar.jsx";
 import DeleteTaskDialog from "./DeleteTaskDialog.jsx";
 import TaskFormModal from "./TaskFormModal.jsx";
 import TaskList from "./TaskList.jsx";
 
 export default function ProjectTasks({ projectId }) {
-  const { tasks, status, error, reload } = useTasks(projectId);
+  const [filters, setFilters] = useState(DEFAULT_FILTERS);
+  const { tasks, status, error, reload } = useTasks(projectId, filters);
 
   // null means closed. { task: null } means "new", { task } means "edit".
   const [formState, setFormState] = useState(null);
@@ -23,6 +26,22 @@ export default function ProjectTasks({ projectId }) {
 
     if (tasks.length === 0) {
       if (hasFailed) return null;
+
+      if (filters.status !== "all") {
+        return (
+          <EmptyState title="No matching tasks" message="No tasks have this status.">
+            <Button
+              type="button"
+              variant="secondary"
+              fullWidth={false}
+              onClick={() => setFilters(DEFAULT_FILTERS)}
+            >
+              Clear filters
+            </Button>
+          </EmptyState>
+        );
+      }
+
       return <EmptyState title="No tasks yet" message="Add the first task for this project." />;
     }
 
@@ -43,6 +62,8 @@ export default function ProjectTasks({ projectId }) {
           Add task
         </Button>
       </div>
+
+      <TaskFilterBar filters={filters} onChange={setFilters} />
 
       {hasFailed && (
         <div className="mt-4 space-y-2">

@@ -195,3 +195,15 @@ src
 ┗ shared
   ┗ components
     ┗ SelectField.jsx
+
+=============================================================================================================
+
+Phase 5b : Tasks CRUD frontend implemented
+
+new files and folder added (for that feature)
+
+src
+┗ features
+  ┗ tasks
+    ┗ components
+      ┗ TaskFilterBar.jsx

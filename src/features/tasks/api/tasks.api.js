@@ -1,7 +1,11 @@
 import api from "../../../shared/api/axiosClient.js";
 
-export async function getTasks(projectId) {
-  const { data } = await api.get(`/projects/${projectId}/tasks`);
+export async function getTasks(projectId, filters) {
+  const [sortBy, order] = filters.sort.split(":");
+  const params = { sortBy, order };
+  if (filters.status !== "all") params.status = filters.status;
+
+  const { data } = await api.get(`/projects/${projectId}/tasks`, { params });
   return data.tasks;
 }
 

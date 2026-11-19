@@ -7,9 +7,9 @@ const DEFAULT_ERROR = "Something went wrong. Please try again.";
 
 export const fetchTasks = createAsyncThunk(
   "tasks/fetchAll",
-  async ({ projectId }, { rejectWithValue }) => {
+  async ({ projectId, filters }, { rejectWithValue }) => {
     try {
-      return await tasksApi.getTasks(projectId);
+      return await tasksApi.getTasks(projectId, filters);
     } catch (error) {
       return rejectWithValue(getApiError(error));
     }

@@ -2,13 +2,16 @@ import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTasks } from "../tasks.slice.js";
 
-export function useTasks(projectId) {
+export function useTasks(projectId, filters) {
   const dispatch = useDispatch();
   const { items, status, error, projectId: loadedProjectId } = useSelector(
     (state) => state.tasks
   );
 
-  const reload = useCallback(() => dispatch(fetchTasks({ projectId })), [dispatch, projectId]);
+  const reload = useCallback(
+    () => dispatch(fetchTasks({ projectId, filters })),
+    [dispatch, projectId, filters]
+  );
 
   useEffect(() => {
     reload();
